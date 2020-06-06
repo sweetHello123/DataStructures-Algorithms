@@ -2,7 +2,7 @@ package com.china;
 
 /**
  * @Author: china wu
- * @Description: 基于数组实现队列
+ * @Description: 基于数组模拟队列(缺陷 ： 一次储存满数据后 ， 队列就是满的了 。 后续再释放后也不能存数据)
  * @Date: 2020/6/5 17:19
  */
 public class ArrayQueue {
@@ -13,12 +13,12 @@ public class ArrayQueue {
     private int maxSize;
 
     /**
-     * 队列头
+     * 队列头(front指向的是队头元素的前一个位置)
      */
     private int front;
 
     /**
-     * 队列尾
+     * 队列尾(rear指向队尾最后一个元素)
      */
     private int rear;
 
@@ -27,11 +27,15 @@ public class ArrayQueue {
      */
     private int[] elements;
 
-    public ArrayQueue(int maxSize) {
-        this.maxSize = maxSize;
-        elements = new int[this.maxSize];
+    /**
+     * 构造方法
+     *
+     * @param size
+     */
+    public ArrayQueue(int size) {
+        maxSize = size;
+        elements = new int[maxSize];
         // 初始时队列头和队列尾指向-1，取值时front后移，添加时rear后移
-        // front指向的是队头元素的前一个位置，rear指向队尾最后一个元素
         front = -1;
         rear = -1;
     }
@@ -83,19 +87,20 @@ public class ArrayQueue {
     public void showQueue() {
         if (isEmpty()) {
             System.out.println("队列为空");
+            return;
         }
         for (int i = 0; i < elements.length; i++) {
-            System.out.println(elements[i]);
+            System.out.printf("elements[%d]=%d\n", i, elements[i]);
         }
     }
 
     /**
-     * 查看队头元素
+     * 查看队头元素（只查不取）
      */
-    public void queueHead() {
+    public int headQueue() {
         if (isEmpty()) {
             throw new RuntimeException("队列为空");
         }
-        System.out.println(elements[front + 1]);
+        return elements[front + 1];
     }
 }
