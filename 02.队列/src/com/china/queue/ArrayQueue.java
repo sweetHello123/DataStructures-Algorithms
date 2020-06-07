@@ -1,4 +1,4 @@
-package com.china;
+package com.china.queue;
 
 /**
  * @Author: china wu

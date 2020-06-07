@@ -1,4 +1,6 @@
-package com.china;
+package com.china.test;
+
+import com.china.queue.ArrayQueue;
 
 import java.util.Scanner;
 
