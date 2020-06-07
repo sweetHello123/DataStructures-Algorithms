@@ -1,4 +1,4 @@
-package com.china;
+package com.china.queue;
 
 /**
  * @Author: china wu
@@ -80,5 +80,38 @@ public class CircleArrayQueue {
         int ele = elements[front];
         front = (front + 1) % maxSize;
         return ele;
+    }
+
+    /**
+     * 展示环形队列中的数据
+     */
+    public void showQueue() {
+        if (isEmpty()) {
+            System.out.println("队列为空");
+            return;
+        }
+        // 从front开始遍历，遍历多少个元素
+        for (int i = front; i < front + size(); i++) {
+            System.out.printf("elements[%d]=%d\n", i % maxSize, elements[i % maxSize]);
+        }
+    }
+
+    /**
+     * 计算环形队列中有效数据的个数
+     *
+     * @return
+     */
+    public int size() {
+        return (rear - front + maxSize) % maxSize;
+    }
+
+    /**
+     * 查看队头元素（只查不取）
+     */
+    public int headQueue() {
+        if (isEmpty()) {
+            throw new RuntimeException("队列为空");
+        }
+        return elements[front];
     }
 }
