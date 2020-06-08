@@ -28,6 +28,64 @@ public class SingleLinkedList {
     }
 
     /**
+     * 根据编号顺序添加节点
+     *
+     * @param heroNode
+     */
+    public void addByNoOrder(HeroNode heroNode) {
+        // 定义一个辅助节点
+        HeroNode temp = head;
+        boolean flag = false;
+        while (true) {
+            // temp已经在链表的最后
+            if (temp.next == null) {
+                break;
+            }
+            // 如果temp下一个节点的no大于添加节点的no，则添加节点的位置就是temp所在位置之后
+            if (temp.next.no > heroNode.no) {
+                break;
+            }
+            // 该节点已经存在不能添加
+            if (temp.next.no == heroNode.no) {
+                flag = true;
+                break;
+            }
+            temp = temp.next;
+        }
+        if (flag) {
+            System.out.printf("该节点的编号%d已经存在，不能添加\n", heroNode.no);
+        } else {
+            heroNode.next = temp.next;
+            temp.next = heroNode;
+        }
+    }
+
+    /**
+     * 根据编号修改节点属性
+     *
+     * @param newHeroNode 新节点
+     */
+    public void updateByNo(HeroNode newHeroNode) {
+        HeroNode temp = head;
+        boolean flag = false;
+        while (true) {
+            if (temp.next == null) {
+                break;
+            } else if (temp.no == newHeroNode.no) {
+                flag = true;
+                break;
+            }
+            temp = temp.next;
+        }
+        if (flag) {
+            temp.name = newHeroNode.name;
+            temp.nickname = newHeroNode.nickname;
+        } else {
+            System.out.printf("编号为%d的节点不存在，无法更新\n", newHeroNode.no);
+        }
+    }
+
+    /**
      * 展示链表所有数据
      */
     public void list() {
