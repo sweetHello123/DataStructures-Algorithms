@@ -1,7 +1,9 @@
 package com.china;
 
 /**
- * @author china wu
+ * @Author: china wu
+ * @Description: 原始数组与稀疏矩阵的转换
+ * @Date: 2020/6/8 12:52
  */
 public class SparseArray {
     public static void main(String[] args) {
