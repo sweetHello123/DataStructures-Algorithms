@@ -73,4 +73,28 @@ public class SingleLinkedListTest {
         singleLinkedList.updateByNo(node);
         singleLinkedList.list();
     }
+
+    /**
+     * 测试根据no来删除节点
+     */
+    @Test
+    public void testDelete() {
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+
+        SingleLinkedList.HeroNode node1 = singleLinkedList.getNodeInstance(1, "宋江", "及时雨");
+        SingleLinkedList.HeroNode node2 = singleLinkedList.getNodeInstance(2, "卢俊义", "玉麒麟");
+        SingleLinkedList.HeroNode node3 = singleLinkedList.getNodeInstance(3, "吴用", "智多星");
+
+        singleLinkedList.addByNoOrder(node1);
+        singleLinkedList.addByNoOrder(node2);
+        singleLinkedList.addByNoOrder(node3);
+
+        singleLinkedList.list();
+
+        System.out.println("-----------------");
+        singleLinkedList.deleteByNo(1);
+        singleLinkedList.deleteByNo(2);
+        singleLinkedList.deleteByNo(4);
+        singleLinkedList.list();
+    }
 }
