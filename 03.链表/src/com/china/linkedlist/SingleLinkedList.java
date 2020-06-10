@@ -62,18 +62,19 @@ public class SingleLinkedList {
     }
 
     /**
-     * 根据编号修改结点属性(思路：找到要删除结点的前一个结点的位置，修改next指针域)
+     * 根据编号修改结点属性
      *
      * @param newHeroNode 新结点
      */
     public void updateByNo(HeroNode newHeroNode) {
-        HeroNode temp = head;
-        // flag标识是否找到要删除结点的前一个结点所在的位置
+        // 定义辅助结点并指向第一个元素结点
+        HeroNode temp = head.next;
         boolean flag = false;
         while (true) {
-            if (temp.next == null) {
+            if (temp == null) {
                 break;
-            } else if (temp.no == newHeroNode.no) {
+            }
+            if (temp.no == newHeroNode.no) {
                 flag = true;
                 break;
             }

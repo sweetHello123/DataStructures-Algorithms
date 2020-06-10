@@ -10,17 +10,19 @@ import org.junit.Test;
  */
 public class SingleLinkedListTest {
 
+    private SingleLinkedList singleLinkedList = new SingleLinkedList();
+
+    private SingleLinkedList.HeroNode node1 = singleLinkedList.getNodeInstance(1, "宋江", "及时雨");
+    private SingleLinkedList.HeroNode node2 = singleLinkedList.getNodeInstance(2, "卢俊义", "玉麒麟");
+    private SingleLinkedList.HeroNode node3 = singleLinkedList.getNodeInstance(3, "吴用", "智多星");
+    private SingleLinkedList.HeroNode node4 = singleLinkedList.getNodeInstance(4, "林冲", "豹子头");
+
+
     /**
      * 测试依次从尾部添加节点
      */
     @Test
     public void testAdd() {
-        SingleLinkedList singleLinkedList = new SingleLinkedList();
-
-        SingleLinkedList.HeroNode node1 = singleLinkedList.getNodeInstance(1, "宋江", "及时雨");
-        SingleLinkedList.HeroNode node2 = singleLinkedList.getNodeInstance(2, "卢俊义", "玉麒麟");
-        SingleLinkedList.HeroNode node3 = singleLinkedList.getNodeInstance(3, "吴用", "智多星");
-        SingleLinkedList.HeroNode node4 = singleLinkedList.getNodeInstance(4, "林冲", "豹子头");
 
         // 依次从尾部添加元素
         singleLinkedList.add(node2);
@@ -36,14 +38,6 @@ public class SingleLinkedListTest {
      */
     @Test
     public void testAddByNoOrder() {
-        SingleLinkedList singleLinkedList = new SingleLinkedList();
-
-        SingleLinkedList.HeroNode node1 = singleLinkedList.getNodeInstance(1, "宋江", "及时雨");
-        SingleLinkedList.HeroNode node2 = singleLinkedList.getNodeInstance(2, "卢俊义", "玉麒麟");
-        SingleLinkedList.HeroNode node3 = singleLinkedList.getNodeInstance(3, "吴用", "智多星");
-        SingleLinkedList.HeroNode node4 = singleLinkedList.getNodeInstance(4, "林冲", "豹子头");
-
-        // 根据编号顺序添加节点
         singleLinkedList.addByNoOrder(node2);
         singleLinkedList.addByNoOrder(node1);
         singleLinkedList.addByNoOrder(node4);
@@ -56,17 +50,7 @@ public class SingleLinkedListTest {
      */
     @Test
     public void testUpdate() {
-        SingleLinkedList singleLinkedList = new SingleLinkedList();
-
-        SingleLinkedList.HeroNode node1 = singleLinkedList.getNodeInstance(1, "宋江", "及时雨");
-        SingleLinkedList.HeroNode node2 = singleLinkedList.getNodeInstance(2, "卢俊义", "玉麒麟");
-        SingleLinkedList.HeroNode node3 = singleLinkedList.getNodeInstance(3, "吴用", "智多星");
-
-        // 根据编号顺序添加节点
-        singleLinkedList.addByNoOrder(node2);
-        singleLinkedList.addByNoOrder(node1);
-        singleLinkedList.addByNoOrder(node3);
-        singleLinkedList.list();
+        testAddByNoOrder();
         System.out.println("-------------------");
 
         SingleLinkedList.HeroNode node = singleLinkedList.getNodeInstance(1, "宋江", "呼保义");
@@ -79,18 +63,7 @@ public class SingleLinkedListTest {
      */
     @Test
     public void testDelete() {
-        SingleLinkedList singleLinkedList = new SingleLinkedList();
-
-        SingleLinkedList.HeroNode node1 = singleLinkedList.getNodeInstance(1, "宋江", "及时雨");
-        SingleLinkedList.HeroNode node2 = singleLinkedList.getNodeInstance(2, "卢俊义", "玉麒麟");
-        SingleLinkedList.HeroNode node3 = singleLinkedList.getNodeInstance(3, "吴用", "智多星");
-
-        singleLinkedList.addByNoOrder(node1);
-        singleLinkedList.addByNoOrder(node2);
-        singleLinkedList.addByNoOrder(node3);
-
-        singleLinkedList.list();
-
+        testAddByNoOrder();
         System.out.println("-----------------");
         singleLinkedList.deleteByNo(1);
         singleLinkedList.deleteByNo(2);
