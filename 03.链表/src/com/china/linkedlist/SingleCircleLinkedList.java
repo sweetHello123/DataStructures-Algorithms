@@ -44,11 +44,10 @@ public class SingleCircleLinkedList {
      * 约瑟夫问题
      *
      * @param startNo 起始编号
-     * @param num 结点总数
-     * @param k 每次报数(1<=k<=num)
+     * @param num     结点总数
+     * @param k       每次报数(1<=k<=num)
      */
     public void joseph(int startNo, int num, int k) {
-        return;
     }
 
     /**
