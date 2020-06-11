@@ -124,7 +124,6 @@ public class DoubleLinkedList {
         }
     }
 
-
     /**
      * 展示链表所有数据
      */
