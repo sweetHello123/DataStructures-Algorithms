@@ -39,7 +39,6 @@ public class SingleCircleLinkedList {
         }
     }
 
-
     /**
      * 约瑟夫问题（小孩报数出圈)
      *
