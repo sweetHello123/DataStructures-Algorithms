@@ -2,7 +2,7 @@ package com.china.queue;
 
 /**
  * @Author: china wu
- * @Description: 基于数组的环形队列
+ * @Description: 基于数组模拟环形队列
  * @Date: 2020/6/6 23:57
  */
 public class CircleArrayQueue {
