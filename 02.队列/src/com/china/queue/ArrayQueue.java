@@ -2,7 +2,7 @@ package com.china.queue;
 
 /**
  * @Author: china wu
- * @Description: 基于数组模拟队列(缺陷 ： 一次储存满数据后 ， 队列就是满的了 。 后续再释放后也不能存数据)
+ * @Description: 基于数组模拟队列(缺陷：一次储存满数据后，队列就是满的了。后续再释放后也不能存数据)
  * @Date: 2020/6/5 17:19
  */
 public class ArrayQueue {
