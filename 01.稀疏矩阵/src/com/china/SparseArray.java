@@ -7,7 +7,6 @@ package com.china;
  */
 public class SparseArray {
     public static void main(String[] args) {
-
         // 1.创建一个原始的二维数组
         int[][] chessArr = new int[11][11];
         // 0代表没有棋子，1代表黑子，2代表蓝子
