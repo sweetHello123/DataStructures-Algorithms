@@ -2,7 +2,7 @@ package com.china.recursion;
 
 /**
  * @Author: china wu
- * @Description: 使用递归算法解决迷宫问题
+ * @Description: 递归应用：使用递归算法解决迷宫问题
  * @Date: 2020/6/13 14:13
  */
 public class MiGong {
