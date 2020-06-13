@@ -80,7 +80,7 @@ public class MiGong {
                     return false;
                 }
             }
-            // 如果该点不是0，则可能是1,2,3
+            // 如果该点不是0，则可能是1,2,3，直接返回false
             else {
                 return false;
             }

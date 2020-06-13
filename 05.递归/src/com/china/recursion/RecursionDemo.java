@@ -10,6 +10,8 @@ public class RecursionDemo {
         // 通过打印问题，回顾递归调用机制
         // 递归调用规则：当程序执行一个方法时，就会在栈中开辟一个新的空间，每个空间的数据(局部变量)是独立的
         print(4);
+        int result = factorial(3);
+        System.out.println(result);
     }
 
     /**
