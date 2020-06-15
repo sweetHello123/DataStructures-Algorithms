@@ -57,5 +57,4 @@ public class DoubleLinkedListTest {
 
         doubleLinkedList.list();
     }
-
 }
