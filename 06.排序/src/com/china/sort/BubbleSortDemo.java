@@ -9,9 +9,10 @@ import java.util.Arrays;
  */
 public class BubbleSortDemo {
     public static void main(String[] args) {
-        int[] arr = {-1, 3, 9, 4, 7};
+        int[] arr = {-1, 3, 9, 4, 7, 0, 0, 10};
+        System.out.println("排序前的数组：" + Arrays.toString(arr));
         bubbleSort(arr);
-        System.out.println(Arrays.toString(arr));
+        System.out.println("排序后的数组：" + Arrays.toString(arr));
     }
 
     /**
@@ -19,6 +20,7 @@ public class BubbleSortDemo {
      * 下一趟则比较除最大数之外的数，总共需比较的趟数等于数组长度-1。
      * 优化：可能在某一趟比较过程中，数组已经有序了则无需下面的比较，因此可以在每趟排序过程中判断数组元素是否交换过
      * 时间复杂度：O(n²)
+     *
      * @param arr 待排序的数组
      */
     public static void bubbleSort(int[] arr) {
