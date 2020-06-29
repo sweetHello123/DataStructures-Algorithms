@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class InsertSortDemo {
     public static void main(String[] args) {
-        int[] arr = {-1, -2, 4, 8, 0, -5};
+        int[] arr = {-1, -2, 4, 0, -5};
         System.out.println("排序前的数组：" + Arrays.toString(arr));
         insertSort(arr);
         System.out.println("排序后的数组：" + Arrays.toString(arr));
@@ -23,8 +23,8 @@ public class InsertSortDemo {
      * @param arr
      */
     public static void insertSort(int[] arr) {
-        int insertValue = 0;
-        int subArrIndex = 0;
+        int insertValue;
+        int subArrIndex;
         // 表示第几轮
         for (int i = 1; i < arr.length; i++) {
             // 每轮待插入的数
