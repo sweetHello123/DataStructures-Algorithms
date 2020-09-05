@@ -5,6 +5,7 @@ package com.china.linkedlist;
  * @Description: 双向链表实现案例
  * @Date: 2020/6/10 12:37
  */
+@SuppressWarnings("all")
 public class DoubleLinkedList {
 
     /**

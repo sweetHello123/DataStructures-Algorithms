@@ -5,6 +5,7 @@ package com.china.linkedlist;
  * @Description: 单链表实现案例
  * @Date: 2020/6/8 12:52
  */
+@SuppressWarnings("all")
 public class SingleLinkedList {
 
     /**

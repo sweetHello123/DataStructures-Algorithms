@@ -5,6 +5,7 @@ package com.china.linkedlist;
  * @Description: 循环链表实现案例
  * @Date: 2020/6/10 18:17
  */
+@SuppressWarnings("all")
 public class SingleCircleLinkedList {
 
     /**
