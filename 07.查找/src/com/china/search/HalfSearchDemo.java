@@ -8,8 +8,12 @@ package com.china.search;
 public class HalfSearchDemo {
     public static void main(String[] args) {
         int[] arr = {0, 3, 5, 16, 33};
-        int index = halfSearch(arr, 0, arr.length - 1, 0);
-        System.out.println("下标为：" + index);
+        int index = halfSearch(arr, 0, arr.length - 1, 8);
+        if (index != -1) {
+            System.out.println("下标为：" + index);
+        } else {
+            System.out.println("查找不到改值");
+        }
     }
 
     /**
