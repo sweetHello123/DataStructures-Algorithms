@@ -5,12 +5,35 @@ package com.china.bintree;
  * @Description: 二叉树
  * @Date: 2020/9/5 21:17
  */
+@SuppressWarnings("all")
 public class BinTree {
 
+    // 树节点
     private TreeNode root;
+
+    // 前序查找比较的次数
+    private int preSearchTime = 0;
+
+    // 中序查找比较的次数
+    private int midSearchTime = 0;
+
+    // 后序查找比较的次数
+    private int lastSearchTime = 0;
 
     public void setRoot(TreeNode root) {
         this.root = root;
+    }
+
+    public int getPreSearchTime() {
+        return preSearchTime;
+    }
+
+    public int getMidSearchTime() {
+        return midSearchTime;
+    }
+
+    public int getLastSearchTime() {
+        return lastSearchTime;
     }
 
     /**
@@ -69,11 +92,110 @@ public class BinTree {
             System.out.println("二叉树为空");
         }
     }
+
+    /**
+     * 前序查找
+     *
+     * @param root 根节点
+     * @param no   待查找的no
+     * @return 节点
+     */
+    public TreeNode preSearch(TreeNode root, int no) {
+        if (root != null) {
+            // 比较(查找)次数加1
+            preSearchTime++;
+            // 先判断根节点值是否等于no
+            if (root.getNo() == no) {
+                return root;
+            }
+            // 定义一个节点保存结果
+            TreeNode resNode = null;
+            // 左子树前序遍历查找
+            if (root.getLeft() != null) {
+                resNode = preSearch(root.getLeft(), no);
+            }
+            // 左子树找到值对应的节点则立即返回，不再查找
+            if (resNode != null) {
+                return resNode;
+            }
+            // 否则右子树前序遍历查找
+            if (root.getRight() != null) {
+                resNode = preSearch(root.getRight(), no);
+            }
+            return resNode;
+        }
+        return null;
+    }
+
+
+    /**
+     * 中序查找
+     *
+     * @param root
+     * @param no
+     * @return
+     */
+    public TreeNode midSearch(TreeNode root, int no) {
+        if (root != null) {
+            TreeNode resNode = null;
+            if (root.getLeft() != null) {
+                resNode = midSearch(root.getLeft(), no);
+            }
+            if (resNode != null) {
+                return resNode;
+            }
+            // 比较(查找)次数加1
+            midSearchTime++;
+            if (root.getNo() == no) {
+                return root;
+            }
+            if (root.getRight() != null) {
+                resNode = midSearch(root.getRight(), no);
+            }
+            return resNode;
+        }
+        return null;
+    }
+
+    /**
+     * 后序查找
+     *
+     * @param root
+     * @param no
+     * @return
+     */
+    public TreeNode lastSearch(TreeNode root, int no) {
+        if (root != null) {
+            TreeNode resNode = null;
+            if (root.getLeft() != null) {
+                resNode = lastSearch(root.getLeft(), no);
+            }
+            // 左子树找到值对应的节点则立即返回，不再查找
+            if (resNode != null) {
+                return resNode;
+            }
+            if (root.getRight() != null) {
+                resNode = lastSearch(root.getRight(), no);
+            }
+            // 右子树找到值对应的节点则立即返回，不再查找
+            if (resNode != null) {
+                return resNode;
+            }
+            // 比较(查找)次数加1
+            lastSearchTime++;
+            if (root.getNo() == no) {
+                return root;
+            }
+            return resNode;
+        }
+        return null;
+    }
 }
 
 /**
  * 树的节点结构
  */
+@SuppressWarnings("all")
 class TreeNode {
 
     private int no;

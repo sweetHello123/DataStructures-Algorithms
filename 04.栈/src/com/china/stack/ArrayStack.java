@@ -82,7 +82,7 @@ public class ArrayStack {
      */
     public void list() {
         if (isEmpty()) {
-            System.out.println("栈为空");
+            System.out.println("当前栈为空");
             return;
         }
         //

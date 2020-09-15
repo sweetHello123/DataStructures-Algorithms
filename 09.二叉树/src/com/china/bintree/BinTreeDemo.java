@@ -34,5 +34,14 @@ public class BinTreeDemo {
 
         System.out.println("后序遍历：");
         binTree.lastOrder(root);
+        System.out.println();
+
+        TreeNode treeNode1 = binTree.preSearch(root, 1);
+        TreeNode treeNode2 = binTree.midSearch(root, 1);
+        TreeNode treeNode3 = binTree.lastSearch(root, 1);
+
+        System.out.println("前序查找：" + treeNode1 + "，查找次数：" + binTree.getPreSearchTime());
+        System.out.println("中序查找：" + treeNode2 + "，查找次数：" + binTree.getMidSearchTime());
+        System.out.println("后序查找：" + treeNode3 + "，查找次数：" + binTree.getLastSearchTime());
     }
 }

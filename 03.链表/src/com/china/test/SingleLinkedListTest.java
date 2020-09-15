@@ -17,13 +17,11 @@ public class SingleLinkedListTest {
     private SingleLinkedList.HeroNode node3 = singleLinkedList.getNodeInstance(3, "吴用", "智多星");
     private SingleLinkedList.HeroNode node4 = singleLinkedList.getNodeInstance(4, "林冲", "豹子头");
 
-
     /**
      * 测试依次从尾部添加节点
      */
     @Test
     public void testAdd() {
-
         // 依次从尾部添加元素
         singleLinkedList.add(node2);
         singleLinkedList.add(node1);
@@ -38,9 +36,9 @@ public class SingleLinkedListTest {
      */
     @Test
     public void testAddByNoOrder() {
+        singleLinkedList.addByNoOrder(node4);
         singleLinkedList.addByNoOrder(node2);
         singleLinkedList.addByNoOrder(node1);
-        singleLinkedList.addByNoOrder(node4);
         singleLinkedList.addByNoOrder(node3);
         singleLinkedList.list();
     }
@@ -69,5 +67,49 @@ public class SingleLinkedListTest {
         singleLinkedList.deleteByNo(2);
         singleLinkedList.deleteByNo(4);
         singleLinkedList.list();
+    }
+
+    /**
+     * 测试获取有效节点个数
+     */
+    @Test
+    public void testGetNodesNum() {
+        testAddByNoOrder();
+        int nodesNum = singleLinkedList.getNodesNum();
+        System.out.println("有效节点个数：" + nodesNum);
+    }
+
+    /**
+     * 测试查询倒数第k个节点
+     */
+    @Test
+    public void testGetLastIndexNode() {
+        testAddByNoOrder();
+        int k = 2;
+        SingleLinkedList.HeroNode node = singleLinkedList.getLastIndexNode(k);
+        System.out.println("倒数第" + k + "个节点为：" + node);
+    }
+
+    /**
+     * 测试反转单链表
+     */
+    @Test
+    public void testReverseNode() {
+        System.out.println("原链表：");
+        testAddByNoOrder();
+        singleLinkedList.reverseNode();
+        System.out.println("反转后的链表：");
+        singleLinkedList.list();
+    }
+
+    /**
+     * 测试逆序输出链表节点
+     */
+    @Test
+    public void testReversePrintNode() {
+        System.out.println("原链表：");
+        testAddByNoOrder();
+        System.out.println("逆序输出：");
+        singleLinkedList.reversePrintNode();
     }
 }

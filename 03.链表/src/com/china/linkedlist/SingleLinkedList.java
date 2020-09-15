@@ -1,5 +1,7 @@
 package com.china.linkedlist;
 
+import java.util.Stack;
+
 /**
  * @Author: china wu
  * @Description: 单链表实现案例
@@ -127,6 +129,84 @@ public class SingleLinkedList {
             System.out.println(temp);
             temp = temp.next;
         }
+    }
+
+    /**
+     * 反转单链表 - 头插法
+     */
+    public void reverseNode() {
+        if (head.next == null || head.next.next == null) {
+            return;
+        }
+        HeroNode cur = head.next;
+        // 定义一个节点变量用于保存当前cur的下一个对象
+        HeroNode temp;
+        // 构造一个新链表的头节点，reverse指向该新链表
+        HeroNode reverse = new HeroNode(0, "", "");
+        while (cur != null) {
+            temp = cur.next;
+            // 将当前对象的next指向新链表的第一个真实节点，第一次为null，后面每一次都指向新加入的节点
+            cur.next = reverse.next;
+            // 将新链表头节点的next指向当前对象，完成头插
+            reverse.next = cur;
+            // cur后移
+            cur = temp;
+        }
+        // 将head的next指向反转后的链表
+        head.next = reverse.next;
+    }
+
+    /**
+     * 逆序输出链表的各个节点 - 利用栈实现
+     */
+    public void reversePrintNode() {
+        if (head.next == null) {
+            return;
+        }
+        Stack<HeroNode> stack = new Stack<>();
+        HeroNode cur = head.next;
+        // 遍历节点并压栈
+        while (cur != null) {
+            stack.push(cur);
+            cur = cur.next;
+        }
+        // 不停的弹栈知道栈为空
+        while (stack.size() != 0) {
+            System.out.println(stack.pop());
+        }
+    }
+
+    /**
+     * 获取单链表有效节点的个数
+     *
+     * @return
+     */
+    public int getNodesNum() {
+        HeroNode temp = head.next;
+        int num = 0;
+        while (temp != null) {
+            num++;
+            temp = temp.next;
+        }
+        return num;
+    }
+
+    /**
+     * 查找链表倒数第k个节点
+     *
+     * @param k 倒数第k个节点
+     */
+    public HeroNode getLastIndexNode(int k) {
+        // 遍历链表得到长度
+        int size = getNodesNum();
+        if (size <= 0 || k <= 0 || k > size) {
+            return null;
+        }
+        HeroNode temp = head.next;
+        for (int i = 0; i < size - k; i++) {
+            temp = temp.next;
+        }
+        return temp;
     }
 
     /**

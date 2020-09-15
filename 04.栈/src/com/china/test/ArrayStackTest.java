@@ -23,7 +23,7 @@ public class ArrayStackTest {
         arrayStack.push(2);
         arrayStack.push(3);
         arrayStack.list();
-//        arrayStack.push(4);
+        arrayStack.push(4);
     }
 
     /**
@@ -36,6 +36,5 @@ public class ArrayStackTest {
             int val = arrayStack.pop();
             System.out.println("出栈的元素为：" + val);
         }
-//        arrayStack.pop();
     }
 }
