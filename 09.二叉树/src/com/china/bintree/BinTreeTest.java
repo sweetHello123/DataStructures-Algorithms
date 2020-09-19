@@ -5,7 +5,7 @@ package com.china.bintree;
  * @Description: 测试二叉树遍历方式
  * @Date: 2020/9/5 21:57
  */
-public class BinTreeDemo {
+public class BinTreeTest {
     public static void main(String[] args) {
         // 创建二叉树对象
         BinTree binTree = new BinTree();
