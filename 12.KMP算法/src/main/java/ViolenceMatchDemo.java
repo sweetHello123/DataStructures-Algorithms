@@ -2,10 +2,10 @@ package main.java;
 
 /**
  * @Author: china wu
- * @Description: 字符串匹配问题 - 判断一个字符串中是否包含另一个字符串
+ * @Description: 字符串匹配问题 - 暴力匹配算法
  * @Date: 2020/9/22 17:26
  */
-public class StringMatch {
+public class ViolenceMatchDemo {
     public static void main(String[] args) {
         String str1 = "hello world";
         String str2 = "orl";
