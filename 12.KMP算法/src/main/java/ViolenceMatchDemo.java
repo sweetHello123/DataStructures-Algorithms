@@ -8,7 +8,7 @@ package main.java;
 public class ViolenceMatchDemo {
     public static void main(String[] args) {
         String str1 = "hello world";
-        String str2 = "orl";
+        String str2 = "or";
         int index = violenceMatch(str1, str2);
         System.out.println(index);
     }

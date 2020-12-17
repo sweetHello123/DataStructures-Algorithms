@@ -2,7 +2,7 @@ package main.java;
 
 /**
  * @Author: china wu
- * @Description:
+ * @Description: 字符串匹配问题 - KMP算法
  * @Date: 2020/10/3 19:49
  */
 public class KmpDemo {
