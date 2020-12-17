@@ -14,7 +14,7 @@ public class KmpDemo {
     /**获取一个字符串(子串)的部分匹配值
      * @return
      */
-    public static int kmpNext(String dest) {
+    public static int kmp(String dest) {
         return -1;
     }
 }
